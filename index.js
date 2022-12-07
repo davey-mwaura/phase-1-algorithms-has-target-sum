@@ -1,22 +1,33 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        return true
+      }
+    }
+  }
+  return false
 }
 
 /* 
-  Write the Big O time complexity of your function here
+  The time complexity of this algorithm is O(n^2),
+  This means that it takes a long time to run when the input is large. 
+  This is because the function uses two nested for loops, which means that it has to do a lot of work as the input gets bigger
 */
 
 /* 
-  Add your pseudocode here
+   loop through each element in the array two times and check if the two elements are different and add up to the target number.
+   if an added pair is found to be equal to the target then it should return true.
 */
 
 /*
-  Add written explanation of your solution here
+  the function loops through the element two times and adds different numbers together to check
+  if the new value is equal to the target.
 */
 
-// You can run `node index.js` to view these console logs
+
 if (require.main === module) {
-  // add your own custom tests in here
+ 
   console.log("Expecting: true");
   console.log("=>", hasTargetSum([3, 8, 12, 4, 11, 7], 10));
 
